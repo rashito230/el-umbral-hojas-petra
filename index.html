@@ -1,67 +1,64 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#06100e">
 <title>EL UMBRAL | HOJAS PETRA</title>
 <style>
 *{box-sizing:border-box}
-body{
- margin:0;
- background:#080e0d;
- color:#e7d4a0;
- font-family:Georgia,serif;
- text-align:center;
-}
-main{
- min-height:100vh;
- display:flex;
- flex-direction:column;
- justify-content:center;
- align-items:center;
- padding:28px;
- background:radial-gradient(ellipse,#14352d,#080e0d 75%);
-}
-.symbol{
- font-size:64px;
- color:#d4b36a;
-}
-h1{
- font-size:clamp(38px,9vw,72px);
- letter-spacing:5px;
- margin:20px 0 8px;
-}
-h2{
- font-size:16px;
- font-weight:normal;
- letter-spacing:3px;
-}
-.line{
- width:130px;
- height:2px;
- background:#b99a54;
- margin:30px;
-}
-p{
- color:#c6d1c9;
- line-height:1.8;
-}
-footer{
- margin-top:65px;
- font-size:13px;
- letter-spacing:2px;
-}
+html{scroll-behavior:smooth}
+body{margin:0;background:#050b0a;color:#e7d4a0;font-family:Georgia,serif;overflow-x:hidden}
+.entry{position:relative;isolation:isolate;min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;padding:65px 22px;overflow:hidden;background:radial-gradient(ellipse at 50% 55%,#173a30 0%,#081713 48%,#030706 90%)}
+.entry:before{content:"";position:absolute;inset:-50%;z-index:-2;background:conic-gradient(from 0deg,transparent 0deg,#b99a5420 50deg,transparent 100deg,#2e8b6722 190deg,transparent 250deg);animation:turn 32s linear infinite}
+.entry:after{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(circle at center,transparent 20%,#020504aa 95%);pointer-events:none}
+.stars{position:absolute;inset:0;pointer-events:none;opacity:.5;background-image:radial-gradient(#dfc57e 0.7px,transparent 1px),radial-gradient(#8ab99d 0.6px,transparent 1px);background-size:89px 113px,137px 173px;background-position:12px 32px,57px 81px;animation:shimmer 7s ease-in-out infinite alternate}
+.content{position:relative;z-index:1;max-width:780px;animation:arrive 1.8s ease both}
+.eyebrow{font:11px/1.8 Arial,sans-serif;letter-spacing:.38em;color:#bda66e;text-transform:uppercase;margin-bottom:30px}
+.portal{position:relative;width:150px;height:192px;margin:0 auto 36px;filter:drop-shadow(0 0 25px #c8a55a55)}
+.portal .arch{position:absolute;inset:0;border:2px solid #c9a35a;border-radius:78px 78px 5px 5px;box-shadow:inset 0 0 20px #b9965033,0 0 20px #b9965033}
+.portal .arch:before{content:"";position:absolute;inset:11px;border:1px solid #d2ae6b77;border-radius:68px 68px 3px 3px}
+.portal .light{position:absolute;inset:24px 24px 12px;border-radius:60px 60px 0 0;background:radial-gradient(ellipse at 50% 80%,#e8ce8c99 0%,#3b8b6c77 30%,transparent 75%);animation:breathe 4s ease-in-out infinite alternate}
+.portal .threshold{position:absolute;bottom:-8px;left:-23px;width:196px;height:2px;background:linear-gradient(90deg,transparent,#d9b56d,transparent);box-shadow:0 0 17px #dfba73}
+h1{font-size:clamp(43px,10vw,86px);font-weight:normal;letter-spacing:.11em;margin:0 0 15px;text-shadow:0 0 32px #d6b77040}
+h2{font-size:clamp(13px,3vw,21px);font-weight:normal;letter-spacing:.23em;line-height:1.8;margin:0;color:#dfc894}
+.rule{width:145px;height:1px;margin:30px auto;background:linear-gradient(90deg,transparent,#d6b46b,transparent)}
+.description{font-size:clamp(17px,3.5vw,23px);line-height:1.65;color:#d6ded5;margin:0 0 30px}
+.enter{display:inline-block;border:1px solid #c7a463;background:#b99a5412;color:#f2dbab;padding:16px 29px;font:12px Arial,sans-serif;letter-spacing:.2em;text-decoration:none;cursor:pointer;transition:background .3s,box-shadow .3s,transform .3s}
+.enter:hover,.enter:focus-visible{background:#b99a5433;box-shadow:0 0 26px #c4a35a55;transform:translateY(-2px)}
+.signature{margin-top:58px;color:#c7b17c;font:11px/1.8 Arial,sans-serif;letter-spacing:.24em}
+.reveal{min-height:75svh;padding:100px 24px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:radial-gradient(ellipse at top,#10261f,#050b0a 75%)}
+.reveal h3{font-size:clamp(29px,6vw,51px);font-weight:normal;letter-spacing:.1em;margin:0 0 20px}
+.reveal p{max-width:570px;color:#c7d0c8;line-height:1.9;font-size:19px}
+.small{color:#bda66e;font:11px Arial,sans-serif;letter-spacing:.23em;margin-top:25px}
+@keyframes arrive{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:translateY(0)}}
+@keyframes breathe{from{opacity:.45;filter:blur(7px)}to{opacity:1;filter:blur(2px)}}
+@keyframes shimmer{from{opacity:.2}to{opacity:.65}}
+@keyframes turn{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
 <main>
-<div class="symbol">◇</div>
+<section class="entry" aria-label="Entrada cinematográfica de El Umbral">
+<div class="stars" aria-hidden="true"></div>
+<div class="content">
+<div class="eyebrow">Una iniciativa de Hojas Petra</div>
+<div class="portal" aria-hidden="true"><div class="arch"></div><div class="light"></div><div class="threshold"></div></div>
 <h1>EL UMBRAL</h1>
 <h2>GALERÍA DE LO DESCONOCIDO</h2>
-<div class="line"></div>
-<p>Una experiencia museográfica digital.</p>
-<p>Las puertas de lo extraordinario están por abrirse.</p>
-<footer>UNA INICIATIVA DE HOJAS PETRA</footer>
+<div class="rule"></div>
+<p class="description">Hay historias que esperan ser descubiertas.<br>Y puertas que solo se abren a quienes se atreven a mirar.</p>
+<a class="enter" href="#explorar">CRUZAR EL UMBRAL</a>
+<div class="signature">CREATIVIDAD · INNOVACIÓN · EXCLUSIVIDAD</div>
+</div>
+</section>
+<section class="reveal" id="explorar">
+<h3>LO EXTRAORDINARIO NOS ESPERA</h3>
+<p>Bienvenido a una experiencia museográfica digital dedicada a explorar piezas, símbolos e historias extraordinarias. Muy pronto, nuevas salas abrirán sus puertas.</p>
+<div class="small">EL UMBRAL · HOJAS PETRA</div>
+</section>
 </main>
 </body>
 </html>
